@@ -1,0 +1,9 @@
+<Infoproblemtype version="2.0">
+  <Program>
+    <Name>matfem</Name>
+    <Description></Description>
+    <Version>1.0</Version>
+    <CustomLibAutomatic>1</CustomLibAutomatic>
+    <CustomLibNativeGroups>1</CustomLibNativeGroups>
+  </Program>
+</Infoproblemtype>

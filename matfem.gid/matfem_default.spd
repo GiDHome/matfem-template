@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<matfem_data version='1.0'>
+  <style show_menubutton_about='0' show_menubutton_search='1'>
+  </style>
+  <display_options frame_width="151" is_frame_open="1"/>
+
+    <!-- Add here your tree structure -->
+
+  <!-- units -->
+  <units>
+    <!--by now it is compulsory define this node if units are used (could be empty if defaults are enougth)-->
+  </units>
+
+  <container n="units" pn="Units" icon="darkorange-length-18">
+    <value n='units_mesh' pn='Geometry units' unit_mesh_definition="1"/>
+    <value n='units_system' pn='Units system' units_system_definition="1">
+      <dependencies node="//*[@unit_definition or @unit_mesh_definition='1']" att1='change_units_system' v1='{@v}'/>
+    </value>
+    <container n="basic_units" pn="Basic units" icon="darkorange-length-18" help="Basic units to be used in the analysis.">
+      <value n='units_length' pn='Length' unit_definition="L"/>
+      <value n='units_mass' pn='Mass' unit_definition="M"/>
+    </container>
+  </container>
+
+  <!-- procs -->
+  <procs>
+    <proc n='GetMaterialsList' args='args'>
+      <![CDATA[
+      Matfem::GetMaterialsList $domNode $args
+      ]]>
+    </proc>
+    <proc n='EditDatabaseList' args='args'>
+      <![CDATA[
+      Matfem::EditDatabaseList $domNode $dict $boundary_conds $args
+      ]]>
+    </proc>
+  </procs>
+</matfem_data>
